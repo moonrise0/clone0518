@@ -116,4 +116,10 @@ public class MainController {
         }
         return "index";
     }
+
+    @RequestMapping("/cart")
+    public String cart(Model model, HttpSession session){
+        model.addAttribute("center", "cart");
+        return "index";
+    }
 }
