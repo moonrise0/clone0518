@@ -78,7 +78,10 @@
               <li><a href="/women">Women</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
-              <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+
+              <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>
+              <li class="cart"><a href="/register"><i class="icon-smile"></i> REGISTER</a></li>
+              <li class="cart"><a href="/login"><i class="icon-log-in"></i> LOGIN</a></li>
             </ul>
           </div>
         </div>
