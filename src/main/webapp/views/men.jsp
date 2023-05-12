@@ -75,7 +75,7 @@
                 <c:forEach var="obj" items="${allitem}">
                 <div class="col-md-3 col-lg-3 mb-4 text-center">
                     <div class="product-entry border">
-                        <a href="#" class="prod-img">
+                        <a href="/item/get?id=${obj.id}" class="prod-img">
                             <img src="images/${obj.imgname}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                         </a>
                         <div class="desc">
