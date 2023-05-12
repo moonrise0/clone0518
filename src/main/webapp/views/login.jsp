@@ -1,6 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script>
+    let login_form = {
+
+        init:function(){
+            $('#login_btn').click(function(){
+                login_form.send();
+            });
+        },
+        send:function(){
+            $('#login_form').attr({
+                'action':'/loginimpl',
+                'method':'post'
+            });
+            $('#login_form').submit();
+        }
+    };
+
+    $(function(){
+        login_form.init();
+    });
+</script>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -19,7 +40,7 @@
             <div class="col-md-6">
                 <div class="contact-wrap">
                     <h3>LOGIN</h3>
-                    <form action="#" class="contact-form">
+                    <form id="login_form" class="contact-form">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -35,7 +56,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input type="submit" value="LOGIN" class="btn btn-primary">
+                                    <button id="login_btn" type="button" class="btn btn-primary">LOGIN</button>
                                 </div>
                             </div>
                         </div>
