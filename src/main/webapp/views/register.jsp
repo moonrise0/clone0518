@@ -29,7 +29,7 @@
                     //success일때는 콤마, 세미콜론 둘 다 없다 주의하기!
                     success:function(result){
                         if(result==0){
-                            $('#check_id').text('사용가능합니다.');
+                            $('#check_id').text('');
                             $('#pwd').focus();
                         }else{
                             $('#check_id').text('사용불가능합니다.');
@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="col-sm-10">
-                                <span id="check_id" class="bg-danger"></span>
+                                <span id="check_id" class="bg-info"></span>
                             </div>
 
                             <div class="w-100"></div>
