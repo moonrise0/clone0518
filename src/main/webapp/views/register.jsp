@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
     let register_form = {
         init:function(){
             $('#register_btn').addClass('disabled');
-
             $('#register_btn').click(function(){
                 register_form.send();
             });
-
             $('#name').keyup(function(){
                 var id = $('#id').val();
                 var pwd = $('#pwd').val();
@@ -94,15 +92,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" id="name" class="form-control" placeholder="Your name">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
                                 </div>
                             </div>
 
                             <div class="w-100"></div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="email">ID</label>
-                                    <input type="text" id="email" class="form-control" placeholder="Your ID">
+                                    <label for="id">ID</label>
+                                    <input type="text" id="id" name="id" class="form-control" placeholder="Your ID">
                                 </div>
                             </div>
 
@@ -114,7 +112,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="pwd">Password</label>
-                                    <input type="password" id="pwd" class="form-control" placeholder="Your Password">
+                                    <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Your Password">
                                 </div>
                             </div>
                             <div class="w-100"></div>

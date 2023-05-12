@@ -94,8 +94,6 @@ public class MainController {
         model.addAttribute("center", nextPage);
         return "index";
     }
-
-
     @RequestMapping("/registerimpl")
     public String registerimpl(Model model, Cust cust, HttpSession session) throws Exception {
         try {

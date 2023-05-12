@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
     let login_form = {
-
         init:function(){
             $('#login_btn').click(function(){
                 login_form.send();
@@ -45,13 +45,13 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="id">ID</label>
-                                    <input type="text" id="id" class="form-control" placeholder="Your ID">
+                                    <input type="text" name="id" id="id" class="form-control" placeholder="Your ID">
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="pwd">Password</label>
-                                    <input type="password" id="pwd" class="form-control" placeholder="Your Password">
+                                    <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Your Password">
                                 </div>
                             </div>
                             <div class="col-sm-12">

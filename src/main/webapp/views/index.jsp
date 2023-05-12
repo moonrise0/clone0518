@@ -242,6 +242,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <!-- popper -->
 <script src="js/popper.min.js"></script>
 <!-- bootstrap 4.1 -->
