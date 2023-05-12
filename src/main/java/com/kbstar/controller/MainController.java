@@ -83,7 +83,7 @@ public class MainController {
             cust = custService.get(id);
             //&&가 2개면, 앞에꺼 실패하면 뒤에껀 안 함
             if(cust != null && encoder.matches(pwd, cust.getPwd())){
-                nextPage ="loginok";
+                nextPage ="center";
                 //session에 담은것도 jsp파일에서 $ 로 꺼낼 수 있다
                 session.setMaxInactiveInterval(100000);
                 session.setAttribute("logincust", cust);
@@ -106,6 +106,14 @@ public class MainController {
         }
         model.addAttribute("rcust", cust);
         model.addAttribute("center", "registerok");
+        return "index";
+    }
+
+    @RequestMapping("/logout")
+    public String logout(Model model, HttpSession session){
+        if(session != null){
+            session.invalidate();
+        }
         return "index";
     }
 }

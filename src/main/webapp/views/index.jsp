@@ -79,32 +79,19 @@
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
 
-<%--              <c:if test="${logincust != null}">--%>
-<%--                <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>--%>
-<%--              </c:if>--%>
-
-
 
               <c:choose>
                 <c:when test="${logincust ==null}">
-                  li class="cart"><a href="/register"><i class="icon-smile"></i> REGISTER</a></li>
+                  <li class="cart"><a href="/register"><i class="icon-smile"></i> REGISTER</a></li>
                   <li class="cart"><a href="/login"><i class="icon-log-in"></i> LOGIN</a></li>
                 </c:when>
                 <c:otherwise>
-                  <li class="cart"><a href="/loout"><i class="icon-log-out"></i> LOGOUT</a></li>
-                  <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i>
-                    <a href="/item/allcart?id=${logincust.id}"></a>Cart</a></li>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/custinfo?id=${logincust.id}">${logincust.id}님</a></li>
-                  </ul>
+                  <li class="cart"><a href="/logout"><i class="icon-log-out"></i> LOGOUT</a></li>
+                  <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i>Cart</a></li>
+                  <li class="cart"><a href="/custinfo?id=${logincust.id}">${logincust.name}님</a></li>
                 </c:otherwise>
               </c:choose>
 
-
-
-
-
-            </ul>
           </div>
         </div>
       </div>
