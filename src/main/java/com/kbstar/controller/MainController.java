@@ -1,7 +1,9 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
+import com.kbstar.dto.Item;
 import com.kbstar.service.CustService;
+import com.kbstar.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-
+import java.util.List;
 
 
 @Controller
@@ -19,6 +21,8 @@ public class MainController {
 
     @Autowired
     CustService custService;
+    @Autowired
+    ItemService itemService;
 
     @Autowired
     private BCryptPasswordEncoder encoder;
@@ -29,7 +33,14 @@ public class MainController {
     }
 
     @RequestMapping("/men")
-    public String mens(Model model){
+    public String mens(Model model) throws Exception {
+        List<Item> list = null;
+        try {
+            list = itemService.get();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+        model.addAttribute("allitem",list);
         model.addAttribute("center", "men");
         return "index";
     }
