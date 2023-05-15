@@ -2,6 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Cart;
 import com.kbstar.dto.Item;
+import com.kbstar.dto.ItemSearch;
 import com.kbstar.service.CartService;
 import com.kbstar.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
@@ -49,6 +50,16 @@ public class ItemController {
 
         model.addAttribute("allcart",list);
         model.addAttribute("center","cart");
+        return "index";
+    }
+
+    @RequestMapping("/search")
+    public String search(Model model, ItemSearch ms) throws Exception {
+        List<Item> list = null;
+        list = itemService.search(ms);
+        model.addAttribute("ms", ms);
+        model.addAttribute("ilist", list);
+        model.addAttribute("center", dir+"all");
         return "index";
     }
 }
