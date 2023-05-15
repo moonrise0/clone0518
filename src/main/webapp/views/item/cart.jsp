@@ -80,7 +80,7 @@
               </div>
               <div class="one-eight text-center">
                 <div class="display-tc">
-                  <a href="#" class="closed"></a>
+                  <a href="/item/delcart?id=${cart.id}" class="closed" role="button"></a>
                 </div>
               </div>
             </div>

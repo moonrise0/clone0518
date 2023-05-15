@@ -62,12 +62,11 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <a href="/item/allcart?id=${logincust.id}" class="btn btn-info" role="button">장바구니로 이동</a>
-                <a href="/item/allpage" class="btn btn-info" role="button">계속 쇼핑하기</a>
+                <a href="/item/cart?id=${logincust.id}" class="btn btn-info" role="button">장바구니로 이동</a>
+                <a href="/men" class="btn btn-info" role="button">계속 쇼핑하기</a>
             </div>
             <div class="modal-footer">
             </div>
         </div>
-
     </div>
 </div>
