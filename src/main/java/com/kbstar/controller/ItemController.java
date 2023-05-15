@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -39,6 +40,15 @@ public class ItemController {
     @RequestMapping("/cart")
     public String cart(Model model, HttpSession session){
         model.addAttribute("center", dir+"cart");
+        return "index";
+    }
+
+    public String allcart(Model model, String id) throws Exception {
+        List<Cart> list = null;
+        list = cartService.getMyCart(id);
+
+        model.addAttribute("allcart",list);
+        model.addAttribute("center","cart");
         return "index";
     }
 }
