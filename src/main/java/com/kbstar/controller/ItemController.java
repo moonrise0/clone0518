@@ -39,20 +39,14 @@ public class ItemController {
 //        return "redirect:/item/get?id="+cart.getCust_id();
     }
     @RequestMapping("/cart")
-    public String cart(Model model, HttpSession session){
-        model.addAttribute("center", dir+"cart");
-        return "index";
-    }
-
-    public String allcart(Model model, String id) throws Exception {
+    public String cart(Model model, String id) throws Exception{
         List<Cart> list = null;
         list = cartService.getMyCart(id);
 
         model.addAttribute("allcart",list);
-        model.addAttribute("center","cart");
+        model.addAttribute("center", dir+"cart");
         return "index";
     }
-
     @RequestMapping("/search")
     public String search(Model model, ItemSearch ms) throws Exception {
         List<Item> list = null;

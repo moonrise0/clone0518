@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div id="page">
 
@@ -32,6 +33,7 @@
           </div>
         </div>
       </div>
+<%--      cart detail--%>
       <div class="row row-pb-lg">
         <div class="col-md-12">
           <div class="product-name d-flex">
@@ -51,94 +53,40 @@
               <span>Remove</span>
             </div>
           </div>
-          <div class="product-cart d-flex">
-            <div class="one-forth">
-              <div class="product-img" style="background-image: url(/images/item-6.jpg);">
+<%--          cart list--%>
+          <c:forEach var="cart" items="${allcart}">
+            <div class="product-cart d-flex">
+              <div class="one-forth">
+                <div class="product-img" style="background-image: url(/images/${obj.item_imgname});">
+                </div>
+                <div class="display-tc">
+                  <h3>${obj.item_name}</h3>
+                </div>
               </div>
-              <div class="display-tc">
-                <h3>Product Name</h3>
+              <div class="one-eight text-center">
+                <div class="display-tc">
+                  <span class="price"><fmt:formatNumber value="${obj.item_price}" pattern="###,###원"/></span>
+                </div>
               </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$68.00</span>
+              <div class="one-eight text-center">
+                <div class="display-tc">
+                  <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="${obj.cnt}" min="1" max="100">
+                </div>
               </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+              <div class="one-eight text-center">
+                <div class="display-tc">
+                  <span class="price"><fmt:formatNumber value="${obj.item_price * obj.cnt}" pattern="###,###원"/></span>
+                </div>
               </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$120.00</span>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <a href="#" class="closed"></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-cart d-flex">
-            <div class="one-forth">
-              <div class="product-img" style="background-image: url(/images/item-7.jpg);">
-              </div>
-              <div class="display-tc">
-                <h3>Product Name</h3>
+              <div class="one-eight text-center">
+                <div class="display-tc">
+                  <a href="#" class="closed"></a>
+                </div>
               </div>
             </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$68.00</span>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <form action="#">
-                  <input type="text" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
-                </form>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$120.00</span>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <a href="#" class="closed"></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-cart d-flex">
-            <div class="one-forth">
-              <div class="product-img" style="background-image: url(/images/item-8.jpg);">
-              </div>
-              <div class="display-tc">
-                <h3>Product Name</h3>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$68.00</span>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <span class="price">$120.00</span>
-              </div>
-            </div>
-            <div class="one-eight text-center">
-              <div class="display-tc">
-                <a href="#" class="closed"></a>
-              </div>
-            </div>
+
+          </c:forEach>
+
           </div>
         </div>
       </div>
