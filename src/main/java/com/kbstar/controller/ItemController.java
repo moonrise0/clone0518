@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @Slf4j
 @RequestMapping("/item")
@@ -31,6 +33,12 @@ public class ItemController {
     @RequestMapping("/addcart")
     public String addcart(Model model, Cart cart) throws Exception {
         cartService.register(cart);
-        return "redirect:/item/allcart?id="+cart.getCust_id();
+        return "redirect:/item/get?id="+cart.getItem_id();
+//        return "redirect:/item/get?id="+cart.getCust_id();
+    }
+    @RequestMapping("/cart")
+    public String cart(Model model, HttpSession session){
+        model.addAttribute("center", dir+"cart");
+        return "index";
     }
 }

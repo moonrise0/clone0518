@@ -87,7 +87,7 @@
                 </c:when>
                 <c:otherwise>
                   <li class="cart"><a href="/logout"><i class="icon-log-out"></i> LOGOUT</a></li>
-                  <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i>Cart</a></li>
+                  <li class="cart"><a href="/item/cart"><i class="icon-shopping-cart"></i>Cart</a></li>
                   <li class="cart"><a href="/custinfo?id=${logincust.id}">${logincust.name}님</a></li>
                 </c:otherwise>
               </c:choose>
@@ -145,19 +145,19 @@
       </div>
       <div class="row">
         <div class="col partner-col text-center">
-          <img src="images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+          <img src="/images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
         </div>
         <div class="col partner-col text-center">
-          <img src="images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+          <img src="/images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
         </div>
         <div class="col partner-col text-center">
-          <img src="images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+          <img src="/images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
         </div>
         <div class="col partner-col text-center">
-          <img src="images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+          <img src="/images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
         </div>
         <div class="col partner-col text-center">
-          <img src="images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+          <img src="/images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
         </div>
       </div>
     </div>
