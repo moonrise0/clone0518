@@ -57,25 +57,25 @@
           <c:forEach var="cart" items="${allcart}">
             <div class="product-cart d-flex">
               <div class="one-forth">
-                <div class="product-img" style="background-image: url(/images/${obj.item_imgname});">
+                <div class="product-img" style="background-image: url(/images/${cart.item_imgname});">
                 </div>
                 <div class="display-tc">
-                  <h3>${obj.item_name}</h3>
-                </div>
-              </div>
-              <div class="one-eight text-center">
-                <div class="display-tc">
-                  <span class="price"><fmt:formatNumber value="${obj.item_price}" pattern="###,###원"/></span>
+                  <h3>${cart.item_name}</h3>
                 </div>
               </div>
               <div class="one-eight text-center">
                 <div class="display-tc">
-                  <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="${obj.cnt}" min="1" max="100">
+                  <span class="price"><fmt:formatNumber value="${cart.item_price}" pattern="###,###원"/></span>
                 </div>
               </div>
               <div class="one-eight text-center">
                 <div class="display-tc">
-                  <span class="price"><fmt:formatNumber value="${obj.item_price * obj.cnt}" pattern="###,###원"/></span>
+                  <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="${cart.cnt}" min="1" max="100">
+                </div>
+              </div>
+              <div class="one-eight text-center">
+                <div class="display-tc">
+                  <span class="price"><fmt:formatNumber value="${cart.item_price * cart.cnt}" pattern="###,###원"/></span>
                 </div>
               </div>
               <div class="one-eight text-center">
