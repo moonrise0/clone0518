@@ -53,10 +53,10 @@
             <div id="colorlib-logo"><a href="/">Footwear</a></div>
           </div>
           <div class="col-sm-5 col-md-3">
-            <form action="#" class="search-wrap">
+            <form action="/item/search" method="get" id="search_form" class="search-wrap">
               <div class="form-group">
                 <input type="search" class="form-control search" placeholder="Search">
-                <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+                <button class="btn btn-primary submit-search text-center" id="search_btn" type="submit"><i class="icon-search"></i></button>
               </div>
             </form>
           </div>
@@ -87,7 +87,7 @@
                 </c:when>
                 <c:otherwise>
                   <li class="cart"><a href="/logout"><i class="icon-log-out"></i> LOGOUT</a></li>
-                  <li class="cart"><a href="/item/cart"><i class="icon-shopping-cart"></i>Cart</a></li>
+                  <li class="cart"><a href="/item/cart?id=${logincust.id}"><i class="icon-shopping-cart"></i>Cart</a></li>
                   <li class="cart"><a href="/custinfo?id=${logincust.id}">${logincust.name}님</a></li>
                 </c:otherwise>
               </c:choose>
