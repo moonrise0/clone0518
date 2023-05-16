@@ -7,7 +7,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
   let chart = {
-    init:function(){
+    init:function() {
+      $.ajax({
+        url: '/chart',
+        success: function (data) {
+          chart.display(data);
+        }
+      });
+    },
+    display:function(data){
       const chart = new Highcharts.Chart({
         chart: {
           renderTo: 'chart',
@@ -21,8 +29,11 @@
           }
         },
         xAxis: {
-          categories: ['Toyota', 'BMW', 'Volvo', 'Audi', 'Peugeot', 'Mercedes-Benz',
-            'Volkswagen', 'Polestar', 'Kia', 'Nissan']
+          categories: [
+                  for(let i=0;i<data.length;i++){
+                    ${data[i].id}
+                  }
+          ]
         },
         yAxis: {
           title: {
@@ -52,7 +63,9 @@
           }
         },
         series: [{
-          data: [1318, 1073, 1060, 813, 775, 745, 537, 444, 416, 395],
+          data: [ for(let i=0;i<data.length;i++){
+            ${data[i].price}
+          }],
           colorByPoint: true
         }]
       });
