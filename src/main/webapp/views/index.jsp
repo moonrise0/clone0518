@@ -68,8 +68,8 @@
               <li class="has-dropdown">
                 <a href="/item/men">Men</a>
                 <ul class="dropdown">
-                  <li><a href="/product-detail">Product Detail</a></li>
-                  <li><a href="/cart">Shopping Cart</a></li>
+                  <li><a href="/item/men">Product Detail</a></li>
+                  <li><a href="/login">Shopping Cart</a></li>
                   <li><a href="/checkout">Checkout</a></li>
                   <li><a href="/order-complete">Order Complete</a></li>
                   <li><a href="/add-to-wishlist">Wishlist</a></li>

@@ -52,35 +52,6 @@
             </div>
 
             <div class="col-sm-4">
-                <div class="size-wrap">
-                    <div class="block-26 mb-2">
-                        <h4>Size</h4>
-                        <ul>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">7.5</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#">8.5</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#">9.5</a></li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#">10.5</a></li>
-                            <li><a href="#">11</a></li>
-                            <li><a href="#">11.5</a></li>
-                            <li><a href="#">12</a></li>
-                            <li><a href="#">12.5</a></li>
-                            <li><a href="#">13</a></li>
-                            <li><a href="#">13.5</a></li>
-                            <li><a href="#">14</a></li>
-                        </ul>
-                    </div>
-                    <div class="block-26 mb-4">
-                        <h4>Width</h4>
-                        <ul>
-                            <li><a href="#">M</a></li>
-                            <li><a href="#">W</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <c:if test="${logincust != null}">
                     <form id="cart_form" class="form-inline well">
                         <input type="hidden" name="cust_id" value="${logincust.id}">

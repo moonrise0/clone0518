@@ -27,7 +27,14 @@ public class MainController {
     @Autowired
     private BCryptPasswordEncoder encoder;
     @RequestMapping("/")
-    public String main(Model model){
+    public String main(Model model) throws Exception {
+        List<Item> list = null;
+        try {
+            list = itemService.get();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+        model.addAttribute("allitem",list);
         model.addAttribute("center", "center");
         return "index";
     }
