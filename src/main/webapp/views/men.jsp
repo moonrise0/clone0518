@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="breadcrumbs-img" style="background-image: url(images/cover-img-1.jpg);">
+                    <div class="breadcrumbs-img" style="background-image: url(/images/cover-img-1.jpg);">
                         <h2>Men's</h2>
                     </div>
                     <div class="menu text-center">
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <div class="featured">
-                        <div class="featured-img featured-img-2" style="background-image: url(images/men.jpg);">
+                        <div class="featured-img featured-img-2" style="background-image: url(/images/men.jpg);">
                             <h2>Casuals</h2>
                             <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
                         </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="featured">
-                        <div class="featured-img featured-img-2" style="background-image: url(images/women.jpg);">
+                        <div class="featured-img featured-img-2" style="background-image: url(/images/women.jpg);">
                             <h2>Dress</h2>
                             <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
                         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="featured">
-                        <div class="featured-img featured-img-2" style="background-image: url(images/item-11.jpg);">
+                        <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
                             <h2>Sports</h2>
                             <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
                         </div>
@@ -72,11 +72,11 @@
                 </div>
             </div>
             <div class="row row-pb-md">
-                <c:forEach var="obj" items="${allitem}">
+                <c:forEach var="obj" items="${allitem.getList()}">
                 <div class="col-md-3 col-lg-3 mb-4 text-center">
                     <div class="product-entry border">
                         <a href="/item/get?id=${obj.id}" class="prod-img">
-                            <img src="images/${obj.imgname}" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                            <img src="/images/${obj.imgname}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                         </a>
                         <div class="desc">
                             <h2><a href="#">${obj.name}</a></h2>
@@ -85,24 +85,24 @@
                     </div>
                 </div>
                 </c:forEach>
-
+                <jsp:include page="page.jsp"/>
                 <div class="w-100"></div>
             </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="row">--%>
+<%--                <div class="col-md-12 text-center">--%>
+<%--                    <div class="block-27">--%>
+<%--                        <ul>--%>
+<%--                            <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>--%>
+<%--                            <li class="active"><span>1</span></li>--%>
+<%--                            <li><a href="#">2</a></li>--%>
+<%--                            <li><a href="#">3</a></li>--%>
+<%--                            <li><a href="#">4</a></li>--%>
+<%--                            <li><a href="#">5</a></li>--%>
+<%--                            <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
         </div>
     </div>
 

@@ -1,5 +1,6 @@
 package com.kbstar.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.kbstar.dto.Cart;
 import com.kbstar.dto.Item;
 import com.kbstar.dto.ItemSearch;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -54,6 +56,19 @@ public class ItemController {
         model.addAttribute("ms", ms);
         model.addAttribute("ilist", list);
         model.addAttribute("center", dir+"all");
+        return "index";
+    }
+    @RequestMapping("/men")
+    public String allpage(@RequestParam(required = false, defaultValue = "1") int pageNo, Model model) throws Exception {
+        PageInfo<Item> p;
+        try {
+            p = new PageInfo<>(itemService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
+        } catch (Exception e) {
+            throw new Exception("시스템 장애: ER0001");
+        }
+        model.addAttribute("target","item");
+        model.addAttribute("allitem",p);
+        model.addAttribute("center","men");
         return "index";
     }
 }
