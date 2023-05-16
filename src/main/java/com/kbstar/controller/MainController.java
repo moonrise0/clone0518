@@ -98,6 +98,13 @@ public class MainController {
         } catch (Exception e) {
             throw new Exception("시스템장애 잠시후 다시 로그인 하세요!");
         }
+        List<Item> list = null;
+        try {
+            list = itemService.get();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+        model.addAttribute("allitem",list);
         model.addAttribute("center", nextPage);
         return "index";
     }
