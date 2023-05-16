@@ -79,7 +79,7 @@
                             <img src="/images/${obj.imgname}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                         </a>
                         <div class="desc">
-                            <h2><a href="#">${obj.name}</a></h2>
+                            <h2><a href="/item/get?id=${obj.id}">${obj.name}</a></h2>
                             <span class="price"><fmt:formatNumber value="${obj.price}" pattern="###,###원"/></span>
                         </div>
                     </div>
