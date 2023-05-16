@@ -1,6 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  let chart = {
+    init:function(){
+      const chart = new Highcharts.Chart({
+        chart: {
+          renderTo: 'chart',
+          type: 'column',
+          options3d: {
+            enabled: true,
+            alpha: 15,
+            beta: 15,
+            depth: 50,
+            viewDistance: 25
+          }
+        },
+        xAxis: {
+          categories: ['Toyota', 'BMW', 'Volvo', 'Audi', 'Peugeot', 'Mercedes-Benz',
+            'Volkswagen', 'Polestar', 'Kia', 'Nissan']
+        },
+        yAxis: {
+          title: {
+            enabled: false
+          }
+        },
+        tooltip: {
+          headerFormat: '<b>{point.key}</b><br>',
+          pointFormat: 'Cars sold: {point.y}'
+        },
+        title: {
+          text: 'Sold passenger cars in Norway by brand, January 2021',
+          align: 'left'
+        },
+        subtitle: {
+          text: 'Source: ' +
+                  '<a href="https://ofv.no/registreringsstatistikk"' +
+                  'target="_blank">OFV</a>',
+          align: 'left'
+        },
+        legend: {
+          enabled: false
+        },
+        plotOptions: {
+          column: {
+            depth: 25
+          }
+        },
+        series: [{
+          data: [1318, 1073, 1060, 813, 775, 745, 537, 444, 416, 395],
+          colorByPoint: true
+        }]
+      });
 
+      function showValues() {
+        document.getElementById('alpha-value').innerHTML = chart.options.chart.options3d.alpha;
+        document.getElementById('beta-value').innerHTML = chart.options.chart.options3d.beta;
+        document.getElementById('depth-value').innerHTML = chart.options.chart.options3d.depth;
+      }
+
+// Activate the sliders
+      document.querySelectorAll('#sliders input').forEach(input => input.addEventListener('input', e => {
+        chart.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
+        showValues();
+        chart.redraw(false);
+      }));
+
+      showValues();
+    }
+  };
+
+  $(function(){
+    chart.init();
+  });
+</script>
 <div class="breadcrumbs">
   <div class="container">
     <div class="row">
@@ -28,6 +105,8 @@
           <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
         </div>
       </div>
+    </div>
+    <div id="chart">
     </div>
   </div>
 </div>
