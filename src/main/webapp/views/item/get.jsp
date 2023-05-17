@@ -28,6 +28,41 @@
     $(function(){
         item_get.init();
     });
+
+    $(document).ready(function(){
+
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            $('#quantity').val(quantity + 1);
+
+
+            // Increment
+
+        });
+
+        $('.quantity-left-minus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            // Increment
+            if(quantity>0){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+
+    });
 </script>
 
 <div id="page">
@@ -68,10 +103,7 @@
                             <form id="cart_form" class="form-inline well">
                                 <input type="hidden" name="cust_id" value="${logincust.id}">
                                 <input type="hidden" name="item_id" value="${gitem.id}">
-
-<%--                                <h4>상품번호 : ${gitem.id}</h4>--%>
                                 <h3>${gitem.name}</h3>
-
                                 <p class="price">
                                     <span><fmt:formatNumber value="${gitem.price}" pattern="###,###원"/></span>
                                     <span class="rate">
@@ -83,15 +115,7 @@
 									(74 Rating)
 								</span>
                                 </p>
-
-                                <p>
-                                    상품번호 : ${gitem.id}
-                                </p>
-                                <div class="size-wrap">
-                                    <div class="block-26 mb-2">
-                                    </div>
-                                </div>
-
+                                <p>상품번호 : ${gitem.id}</p>
 
 
                                 <div class="input-group mb-4">
