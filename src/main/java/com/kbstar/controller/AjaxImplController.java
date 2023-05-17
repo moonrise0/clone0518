@@ -50,8 +50,6 @@ public class AjaxImplController {
         }
         jo.put("id",jaId);
         jo.put("price",jaPrice);
-        log.info("------------------------------------------------------------------------");
-        log.info(jo.toJSONString());
         return jo;
     }
 }

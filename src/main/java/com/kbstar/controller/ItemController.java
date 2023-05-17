@@ -44,11 +44,27 @@ public class ItemController {
     public String cart(Model model, String id) throws Exception{
         List<Cart> list = null;
         list = cartService.getMyCart(id);
-
         model.addAttribute("allcart",list);
         model.addAttribute("center", dir+"cart");
         return "index";
     }
+
+    @RequestMapping("/addcheck")
+    public String addcheck(Model model, Cart cart) throws Exception {
+        return "redirect:/item/cart?id="+cart.getId();
+//        return "redirect:/item/get?id="+cart.getCust_id();
+    }
+
+
+    @RequestMapping("/check")
+    public String check(Model model, String id) throws Exception {
+        List<Cart> list = null;
+        list = cartService.getMyCart(id);
+        model.addAttribute("allcart",list);
+        model.addAttribute("center", dir+"check");
+        return "index";
+    }
+
     @RequestMapping("/search")
     public String search(Model model, ItemSearch ms) throws Exception {
         List<Item> list = null;

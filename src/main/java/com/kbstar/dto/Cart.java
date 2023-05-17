@@ -34,5 +34,4 @@ public class Cart {
     private int item_price;
     private String item_imgname;
 
-
 }

@@ -130,10 +130,4 @@ public class MainController {
         }
         return "index";
     }
-
-    @RequestMapping("/detail")
-    public String detail(Model model, HttpSession session){
-        model.addAttribute("center", "detail");
-        return "index";
-    }
 }

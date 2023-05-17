@@ -2,8 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div id="page">
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<div id="page">
   <div class="breadcrumbs">
     <div class="container">
       <div class="row">
@@ -13,6 +16,7 @@
       </div>
     </div>
   </div>
+
   <div class="colorlib-product">
     <div class="container">
       <div class="row row-pb-lg">
@@ -84,47 +88,54 @@
                 </div>
               </div>
             </div>
-
           </c:forEach>
 
           </div>
         </div>
-      </div>
+
       <div class="row row-pb-lg">
         <div class="col-md-12">
           <div class="total-wrap">
             <div class="row">
               <div class="col-sm-8">
-                <form action="#">
+                <form id="cart_check">
+                  <input type="hidden" name="cart_id" value="${cart.id}">
                   <div class="row form-group">
-                    <div class="col-sm-9">
-                      <input type="text" name="quantity" class="form-control input-number" placeholder="Your Coupon Number...">
-                    </div>
-                    <div class="col-sm-3">
-                      <input type="submit" value="Apply Coupon" class="btn btn-primary">
+                    <div class="col-md-12 text-center">
+                      <button class="btn btn-primary" id="cart_checkbtn"><i class="icon-shopping-bag"></i> Place an order</button>
                     </div>
                   </div>
                 </form>
               </div>
-              <div class="col-sm-4 text-center">
-                <div class="total">
-                  <div class="sub">
-                    <p><span>Subtotal:</span> <span>$200.00</span></p>
-                    <p><span>Delivery:</span> <span>$0.00</span></p>
-                    <p><span>Discount:</span> <span>$45.00</span></p>
-                  </div>
-                  <div class="grand-total">
-                    <p><span><strong>Total:</strong></span> <span>$450.00</span></p>
+
+                <div class="col-sm-4 text-center">
+                  <div class="total">
+                    <div class="sub">
+                      <c:set var="total" value="0" scope="session" />
+                        <c:forEach var="cart" items="${allcart}">
+                          <c:set var="subtotal" value="${cart.item_price * cart.cnt}" /> <!-- Store individual item price in a variable -->
+                          <c:set var="total" value="${total + subtotal}" /> <!-- Add subtotal to the total -->
+                      </c:forEach>
+
+                      <c:set var="discount" value="10000" />
+                      <c:set var="discountedTotal" value="${total - discount}" />
+
+                      <p><span>Subtotal:</span> <span><fmt:formatNumber value="${total}" pattern="###,###원"/></span></p>
+                      <p><span>Delivery:</span> <span>무료</span></p>
+                      <p><span>Discount:</span> <span>10,000원</span></p>
+                    </div>
+                    <div class="grand-total">
+                      <p><span><strong>Total:</strong></span> <span><fmt:formatNumber value="${discountedTotal}" pattern="###,###원"/></span></p>
+                    </div>
                   </div>
                 </div>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 
 </div>
 
