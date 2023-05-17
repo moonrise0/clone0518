@@ -25,44 +25,40 @@
             });
         }
     };
+
+
+    let quantity_btn = {
+       init:function(){
+           var quantitiy=0;
+           $('.quantity-right-plus').click(function(e){
+               // Stop acting like a button
+               e.preventDefault();
+               // Get the field name
+               var quantity = parseInt($('#cnt').val());
+               // If is not undefined
+               $('#cnt').val(quantity + 1);
+           });
+
+           $('.quantity-left-minus').click(function(e){
+               // Stop acting like a button
+               e.preventDefault();
+               // Get the field name
+               var quantity = parseInt($('#cnt').val());
+               // If is not undefined
+               // Increment
+               if(quantity>0){
+                   $('#cnt').val(quantity - 1);
+               }
+           });
+       }
+    };
+
     $(function(){
         item_get.init();
+        quantity_btn.init();
     });
 
-    $(document).ready(function(){
 
-        var quantitiy=0;
-        $('.quantity-right-plus').click(function(e){
-
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-
-            // If is not undefined
-
-            $('#quantity').val(quantity + 1);
-
-
-            // Increment
-
-        });
-
-        $('.quantity-left-minus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-
-            // If is not undefined
-
-            // Increment
-            if(quantity>0){
-                $('#quantity').val(quantity - 1);
-            }
-        });
-
-    });
 </script>
 
 <div id="page">
