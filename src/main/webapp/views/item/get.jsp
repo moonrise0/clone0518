@@ -35,8 +35,12 @@
                e.preventDefault();
                // Get the field name
                var quantity = parseInt($('#cnt').val());
+               if (isNaN(quantity) || quantity < 1) {
+                   $('#cnt').val(1);
+               }else{
+                   $('#cnt').val(quantity + 1);
+               }
                // If is not undefined
-               $('#cnt').val(quantity + 1);
            });
 
            $('.quantity-left-minus').click(function(e){
@@ -264,9 +268,6 @@
         </div>
     </div>
 
-
-
-
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -286,6 +287,5 @@
             </div>
         </div>
     </div>
-
 
 </div>

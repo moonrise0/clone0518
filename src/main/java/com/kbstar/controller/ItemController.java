@@ -49,6 +49,16 @@ public class ItemController {
         model.addAttribute("center", dir+"cart");
         return "index";
     }
+
+    @RequestMapping("/check")
+    public String check(Model model, String id) throws Exception {
+//        List<Cart> list = null;
+//        list = cartService.getMyCart(id);
+//        model.addAttribute("allcart",list);
+        model.addAttribute("center", dir+"check");
+        return "index";
+    }
+
     @RequestMapping("/search")
     public String search(Model model, ItemSearch ms) throws Exception {
         List<Item> list = null;
