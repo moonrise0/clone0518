@@ -35,13 +35,23 @@ public class AjaxImplController {
     public Object chart() throws Exception{
         List<Item> list = null;
         list = itemService.get();
+
         JSONObject jo = new JSONObject();
 
         JSONArray jaId = new JSONArray();
         for(int i = 0 ; i<list.size();i++ ){
-
+            String id = String.valueOf(list.get(i).getId());
+            jaId.add(id);
         }
-
+        JSONArray jaPrice = new JSONArray();
+        for(int i = 0 ; i<list.size();i++ ){
+            int price = list.get(i).getPrice();
+            jaPrice.add(price);
+        }
+        jo.put("id",jaId);
+        jo.put("price",jaPrice);
+        log.info("------------------------------------------------------------------------");
+        log.info(jo.toJSONString());
         return jo;
     }
 }

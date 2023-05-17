@@ -29,11 +29,7 @@
           }
         },
         xAxis: {
-          categories: [
-                  for(let i=0;i<data.length;i++){
-                    ${data[i].id}
-                  }
-          ]
+          categories: data.id
         },
         yAxis: {
           title: {
@@ -42,10 +38,10 @@
         },
         tooltip: {
           headerFormat: '<b>{point.key}</b><br>',
-          pointFormat: 'Cars sold: {point.y}'
+          pointFormat: 'Shoes Price : {point.y}'
         },
         title: {
-          text: 'Sold passenger cars in Norway by brand, January 2021',
+          text: 'ID별 가격',
           align: 'left'
         },
         subtitle: {
@@ -63,9 +59,7 @@
           }
         },
         series: [{
-          data: [ for(let i=0;i<data.length;i++){
-            ${data[i].price}
-          }],
+          data:  data.price,
           colorByPoint: true
         }]
       });
