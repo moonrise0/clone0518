@@ -2,8 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div id="page">
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<div id="page">
   <div class="breadcrumbs">
     <div class="container">
       <div class="row">
@@ -85,7 +88,6 @@
                 </div>
               </div>
             </div>
-
           </c:forEach>
 
           </div>
@@ -96,13 +98,11 @@
           <div class="total-wrap">
             <div class="row">
               <div class="col-sm-8">
-                <form action="#">
+                <form id="cart_check">
+                  <input type="hidden" name="cart_id" value="${cart.id}">
                   <div class="row form-group">
-                    <div class="col-sm-9">
-                      <input type="text" name="quantity" class="form-control input-number" placeholder="Your Coupon Number...">
-                    </div>
-                    <div class="col-sm-3">
-                      <input type="submit" value="Apply Coupon" class="btn btn-primary">
+                    <div class="col-md-12 text-center">
+                      <button class="btn btn-primary" id="cart_checkbtn"><i class="icon-shopping-bag"></i> Place an order</button>
                     </div>
                   </div>
                 </form>

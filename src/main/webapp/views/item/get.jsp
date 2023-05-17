@@ -25,8 +25,6 @@
             });
         }
     };
-
-
     let quantity_btn = {
        init:function(){
            var quantitiy=0;
@@ -99,14 +97,12 @@
 
                 <div class="col-sm-4">
                     <div class="product-desc">
-                        <c:if test="${logincust != null}">
-                            <form id="cart_form" class="form-inline well">
-                                <input type="hidden" name="cust_id" value="${logincust.id}">
-                                <input type="hidden" name="item_id" value="${gitem.id}">
-                                <h3>${gitem.name}</h3>
-                                <p class="price">
-                                    <span><fmt:formatNumber value="${gitem.price}" pattern="###,###원"/></span>
-                                    <span class="rate">
+                        <input type="hidden" name="cust_id" value="${logincust.id}">
+                        <input type="hidden" name="item_id" value="${gitem.id}">
+                        <h3>${gitem.name}</h3>
+                        <p class="price">
+                            <span><fmt:formatNumber value="${gitem.price}" pattern="###,###원"/></span>
+                            <span class="rate">
 									<i class="icon-star-full"></i>
 									<i class="icon-star-full"></i>
 									<i class="icon-star-full"></i>
@@ -114,8 +110,11 @@
 									<i class="icon-star-half"></i>
 									(74 Rating)
 								</span>
-                                </p>
-                                <p>상품번호 : ${gitem.id}</p>
+                        </p>
+                        <p>상품번호 : ${gitem.id}</p>
+
+                        <c:if test="${logincust != null}">
+                            <form id="cart_form" class="form-inline well">
 
 
                                 <div class="input-group mb-4">
