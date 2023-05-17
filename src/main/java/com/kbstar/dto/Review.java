@@ -11,6 +11,11 @@ import java.util.Date;
 @NoArgsConstructor
 public class Review {
     private String name;
-    private String text;
     private Date rdate;
+    private String text;
+
+    public Review(String name, String text) {
+        this.name = name;
+        this.text = text;
+    }
 }

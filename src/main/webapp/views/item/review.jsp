@@ -25,12 +25,13 @@
 <div class="review">
     <div class="contact-wrap">
         <h3>Rest Review</h3>
-        <form action="#" class="contact-form">
+        <form action="/reviewimpl" method="post" class="contact-form">
+            <input type="hidden"name="id" value="${gitem.id}"/>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="fname">Name</label>
-                        <input type="name" id="fname" class="form-control" placeholder="Your name">
+                        <input type="text" name="name" id="fname" class="form-control" placeholder="Your name">
                     </div>
                 </div>
                 <div class="w-100"></div>
