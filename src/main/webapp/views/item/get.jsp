@@ -87,6 +87,9 @@
                                 <a href="#" class="prod-img">
                                   <img src="/images/${gitem.imgname}"class="img-fluid" alt="Free html5 bootstrap 4 template"/>
                                 </a>
+
+
+
 <%--                                <h4>${gitem.id}</h4>--%>
 <%--                                <h4>${gitem.name}</h4>--%>
 <%--                                <h4>${gitem.price}</h4>--%>

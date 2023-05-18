@@ -5,7 +5,7 @@
 <aside id="colorlib-hero">
   <div class="flexslider">
     <ul class="slides">
-      <li style="background-image: url(/images/img_bg_1.jpg);">
+      <li style="background-image: url(/images/img_1.jpg);">
         <div class="overlay"></div>
         <div class="container-fluid">
           <div class="row">
@@ -87,6 +87,8 @@
             <a href="/item/get?id=${obj.id}" class="prod-img">
               <img src="/images/${obj.imgname}" class="img-fluid" alt="Free html5 bootstrap 4 template">
             </a>
+
+
             <div class="desc">
               <h2><a href="/item/get?id=${obj.id}">${obj.name}</a></h2>
               <span class="price"><fmt:formatNumber value="${obj.price}" pattern="###,###원"/></span>
